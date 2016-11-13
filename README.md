@@ -1,5 +1,6 @@
 # loqarun
 Work in progress...
+(alpha quality, only tested on Ubuntu 16.04, should work on most current debian-based distributions)
 
 Uses lib/ from https://github.com/niieani/bash-oo-framework
 
