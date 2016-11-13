@@ -15,3 +15,4 @@ The profile directory will also be configured.
 - Add pre-release support
 - Check best way for arch detection ($HOSTTYPE or lsb-release or ...)
 - Add rpm support
+- ... (add your suggestion below)
