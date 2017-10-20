@@ -9,7 +9,7 @@ Runs the given version of LibreOffice from /opt.
 If not available it will be downloaded and installed.
 The profile directory will also be configured.
 
-(for more info see [loqarun.sh] (https://github.com/DanielvV/loqarun/edit/master/loqarun.sh))
+(for more info see [loqarun.sh](https://github.com/DanielvV/loqarun/blob/master/loqarun_0.1.sh))
 
 ## TODO
 - Fix simultanious multiple install feature
