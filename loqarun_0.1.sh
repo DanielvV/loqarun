@@ -478,6 +478,7 @@ this run
       s/^  *//g
       s/  *$//g
       s/  */ /g
+      s/ - / /g
     ')"
   }
 
@@ -520,8 +521,8 @@ this run
       | sed "s/VARS/$($var:versioninfilename)_Linux_$($var:archinfilename)/")"
     else
       $var:filename = "$(wget -O - -q "$($var:_server)" \
-      | sed 's/>[^<>]*</\n/g' | grep deb.tar.gz | sed 's/a href=//g
-      s/\"//g' | head -n 1)"
+      | sed 's/ /\n/g' | grep deb.tar.gz | sed 's/href=//g;s/\"//g' \
+      | head -n 1)"
     fi
     this filename = "$($var:filename \
     | sed "s/.tar.gz/$($var:langpack).tar.gz/")"
