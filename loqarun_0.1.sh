@@ -48,9 +48,9 @@ function main() {
 
   # set default options
   $var:_prefix = libreoffice-
-  $var:_server = http://vm186.documentfoundation.org
-  $var:_server = http://downloadarchive.documentfoundation.org
-  $var:_dailyserver = http://dev-builds.libreoffice.org/daily/
+  $var:_server = https://vm186.documentfoundation.org
+  $var:_server = https://downloadarchive.documentfoundation.org
+  $var:_dailyserver = https://dev-builds.libreoffice.org/daily/
   $var:_installation_dir = "/opt/"
   $var:_optsfile = "$HOME/.loqarunopts"
 
@@ -294,7 +294,7 @@ class:LibreOffice() {
     # populate $(this versionslist) from $($var:_server)
     if [[ $($var:_daily toString) ]]; then
       this versionslist = \
-      "$(this wgetsed http://dev-builds.libreoffice.org/daily \
+      "$(this wgetsed $($var:_dailyserver) \
       | sed 's/libreoffice-//g' | tail -n 3)"
     else
       this versionslist = "$(this wgetsed $($var:_server)/libreoffice/old)"
@@ -391,9 +391,9 @@ if [[ $($var:_daily toString) ]]; then
     $var:urlpref = 'libreoffice-'
   fi
   if [[ -z "${arch/*64}" ]]; then
-    $var:sixfour = "/Linux-rpm_deb-x86_64@70-TDF/current"
+    $var:sixfour = "/Linux-rpm_deb-x86_64@86-TDF/current"
   else
-    $var:sixfour = "/Linux-rpm_deb-x86@71-TDF/current"
+    $var:sixfour = "/Linux-rpm_deb-x86@87-TDF/current"
   fi
   $var:_server = \
   "$($var:_dailyserver)$($var:urlpref)$($var:_version)$($var:sixfour)"
